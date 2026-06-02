@@ -42,3 +42,32 @@ jobs:
             # executar os testes e2e
             - name: Executando testes e2e
               run: yarn run e2e
+
+            # publicação de relatório - Exercício 2: Implementando plugin/action disponível no Marketplace
+            - name: Publicando reporte de testes
+              uses: ctrf-io/github-test-reporter@v1
+              with: 
+                report-path: './ctrf/*.json'
+                summary-report: true
+                summary-delta-report: true
+                tests-changed-report: true
+                github-report: true
+                test-report: true
+                test-list-report: true
+                failed-report: true
+                fail-rate-report: true
+                flaky-report: true
+                flaky-rate-report: true
+                failed-folded-report: true
+                previous-results-report: true
+                insights-report: true
+                slowest-report: true
+                skipped-report: true
+                suite-folded-report: true
+                suite-list-report: true
+                file-report: true
+                upload-artifact: true
+                fetch-previous-results: true
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              if: always()
