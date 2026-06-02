@@ -38,6 +38,10 @@ jobs:
             # instalação dos Browsers do Playwright
             - name: Instalando Browsers do Playwright
               run: yarn playwright install
+
+            # criação de pasta para salvar arquivos utilizados para o relatório
+            - name: Criando pasta ctrf
+              run: mkdir -p ctrf
             
             # executar os testes e2e
             - name: Executando testes e2e
