@@ -24,7 +24,7 @@ export default defineConfig({
   reporter: [
     ['html', { open: false }],
     ['junit', { outputFile: 'results.xml' }],
-    ['playwright-ctrf-json-reporter', { outputFile: 'ctrf/report.json' }]
+    ['playwright-ctrf-json-reporter', { outputFile: 'report.json' }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
